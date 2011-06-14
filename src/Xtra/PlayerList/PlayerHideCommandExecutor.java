@@ -41,6 +41,8 @@ public class PlayerHideCommandExecutor implements CommandExecutor {
 		    	plugin.saveConfig();
 		    	sender.sendMessage("You are now hidden.");
 				System.out.println("Added " + toadd + "to hidden list");
+				plugin.getServer().broadcastMessage(toadd + " has left the game.");
+				
 				return true;
 				}
 				else

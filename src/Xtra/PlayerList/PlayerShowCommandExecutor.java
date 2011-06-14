@@ -41,7 +41,8 @@ public class PlayerShowCommandExecutor implements CommandExecutor {
 				plugin.hidden.remove(toadd);
 		    	plugin.saveConfig();
 		    	sender.sendMessage("You are now unhidden.");
-				System.out.println("Added " + toadd + "to hidden list");
+				System.out.println("Removed " + toadd + " from hidden list");
+				plugin.getServer().broadcastMessage(toadd + " has joined the game.");
 				return true;
 			
 				}

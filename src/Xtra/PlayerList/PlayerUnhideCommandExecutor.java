@@ -96,9 +96,10 @@ public class PlayerUnhideCommandExecutor implements CommandExecutor {
 							plugin.hidden.remove(who);
 					    	plugin.saveConfig();
 					    	player.sendMessage("You are now unhidden.");
-					    	player.sendMessage(player  + " is now unhidden.");
+					    	sender.sendMessage(player  + " is now unhidden.");
 					    	System.out.println("Added " + who + "to hidden list");
-							return true;
+							plugin.getServer().broadcastMessage(who + " has joined the game.");
+					    	return true;
 						}
 						else
 						{
