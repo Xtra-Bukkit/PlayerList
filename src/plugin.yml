@@ -1,6 +1,6 @@
 name: PlayerList
 main: Xtra.PlayerList.PlayerList
-version: 1.1.0
+version: 1.1.1
 commands:
   players:
     description: Gives a list of players in your world.
@@ -14,3 +14,11 @@ commands:
     description: Show's player.
     aliases: pshow
     usage: /pshow
+  pclear:
+    description: Clear's player hidden array.
+    aliases: pclear
+    usage: /pclear
+  punhide:
+    description: Removes a certain player from hidden array.
+    aliases: punhide
+    usage: /pclear [who]

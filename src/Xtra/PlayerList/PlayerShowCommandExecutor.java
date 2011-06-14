@@ -32,17 +32,29 @@ public class PlayerShowCommandExecutor implements CommandExecutor {
 						
 			if (sender instanceof Player)
 			{
-				System.out.println("Started");
 				String toadd;
 				toadd = ((Player) sender).getDisplayName();
+				
+				if(plugin.hidden.contains(toadd)==true)
+				{
+				System.out.println("Started");
 				plugin.hidden.remove(toadd);
 		    	plugin.saveConfig();
+		    	sender.sendMessage("You are now unhidden.");
 				System.out.println("Added " + toadd + "to hidden list");
 				return true;
+			
+				}
+				
+				else
+				{
+					System.out.println("Command can only be used by a player which is hidden");
+					return true;
+				}			
 			}
 			else
 			{
-				System.out.println("Command can only be used by a player");
+				System.out.println("Command can only be used by a player which is hidden");
 				return true;
 			}
 			

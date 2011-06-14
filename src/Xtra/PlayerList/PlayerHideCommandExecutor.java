@@ -32,13 +32,20 @@ public class PlayerHideCommandExecutor implements CommandExecutor {
 						
 			if (sender instanceof Player)
 			{
-				System.out.println("Started");
 				String toadd;
 				toadd = ((Player) sender).getDisplayName();
+				
+				if(plugin.hidden.contains(toadd)==false)
+				{
 				plugin.hidden.add(toadd);
 		    	plugin.saveConfig();
+		    	sender.sendMessage("You are now hidden.");
 				System.out.println("Added " + toadd + "to hidden list");
 				return true;
+				}
+				else
+				{sender.sendMessage("Command can only be used by a player which is NOT hidden");}
+			
 			}
 			else
 			{
